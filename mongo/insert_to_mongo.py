@@ -98,21 +98,6 @@ def main():
         help="Path to Hotel_Reviews.csv",
     )
     parser.add_argument(
-        "--mongo-uri",
-        default=os.getenv("MONGO_URI"),
-        help="MongoDB connection URI",
-    )
-    parser.add_argument(
-        "--db",
-        default=os.getenv("MONGO_DB"),
-        help="Database name (default: bdse_hotels)",
-    )
-    parser.add_argument(
-        "--collection",
-        default=os.getenv("MONGO_COLLECTION"),
-        help="Collection name (default: reviews)",
-    )
-    parser.add_argument(
         "--chunksize",
         type=int,
         default=int(os.getenv("INSERT_CHUNKSIZE")),
@@ -141,9 +126,9 @@ def main():
 
     total = insert(
         csv_path=args.csv,
-        mongo_uri=args.mongo_uri,
-        db_name=args.db,
-        collection_name=args.collection,
+        mongo_uri=os.getenv("MONGO_URI"),
+        db_name=os.getenv("MONGO_DB"),
+        collection_name=os.getenv("MONGO_COLLECTION"),
         chunksize=args.chunksize,
         score_threshold=args.score_threshold,
         drop=args.drop,
