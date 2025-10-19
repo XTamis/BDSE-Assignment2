@@ -91,9 +91,9 @@ barView = html.Div(
             figure=count_bar,
             style=pageStyle,
         ),
-        html.H3('Postive reviews nationality count', style=pageStyle),
+        html.H3('Positive reviews nationality count', style=pageStyle),
         dcc.Graph(
-            id='Postive Count-nationality',
+            id='Positive Count-nationality',
             figure=positive_count_bar,
             style=pageStyle
         ),
@@ -127,9 +127,9 @@ pieView = html.Div([
         figure=CountsPieChart,
         style=pageStyle
     ),
-    html.H3('Postive reviews nationality count', style=pageStyle),
+    html.H3('Positive reviews nationality count', style=pageStyle),
     dcc.Graph(
-        id='Postive Count-nationality',
+        id='Positive Count-nationality',
         figure=positiveCountsPieChart,
         style=pageStyle
     ),
